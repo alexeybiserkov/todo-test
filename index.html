@@ -4,10 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo Test</title>
+
     <link rel="stylesheet" href="/dist/css/style.min.css">
+
+    <style id="todo-container-style-vars">
+        .todo-container {
+            --todo-container-background: #0F0E13;
+            --todo-container-title-color: #fff;
+            --todo-container-text-color: #fff;
+            --todo-container-text-done-color: #BEBEBE;
+            --todo-container-counter-color: #BEBEBE;
+            --todo-container-button-background: #2F69FE;
+            --todo-container-button-background-hover: #1F57E7;
+            --todo-container-border-color: #303239;
+        }
+    </style>
+
 </head>
 <body>
     
+    <main class="site-main">
+        <div class="flex-center">
+            <div class="todo-container">
+                <div class="todo-header">
+                    <div class="todo-title">Task list</div>
+                    <div class="todo-counter">3/5 done</div>
+                </div>
+                <ul class="todo-list">
+                    <li class="todo-item">
+                        <span class="todo-item-move-icon"></span>
+                        <label class="todo-item-label">
+                            <input checked class="todo-item-status" type="checkbox">
+                            <span class="todo-item-status-icon"></span>
+                            <span>Identify and contextualize the problem</span>
+                        </label>
+                    </li>
+                    <li class="todo-item">
+                        <span class="todo-item-move-icon"></span>
+                        <label class="todo-item-label">
+                            <input checked class="todo-item-status" type="checkbox">
+                            <span class="todo-item-status-icon"></span>
+                            <span>Present ideas and changes to team</span>
+                        </label>
+                    </li>
+                    <li class="todo-item">
+                        <span class="todo-item-move-icon"></span>
+                        <label class="todo-item-label">
+                            <input checked class="todo-item-status" type="checkbox">
+                            <span class="todo-item-status-icon"></span>
+                            <span>Prepare User Flows</span>
+                        </label>
+                    </li>
+                    <li class="todo-item">
+                        <span class="todo-item-move-icon"></span>
+                        <label class="todo-item-label">
+                            <input class="todo-item-status" type="checkbox">
+                            <span class="todo-item-status-icon"></span>
+                            <span>Prepare design style guide</span>
+                        </label>
+                    </li>
+                    <li class="todo-item">
+                        <span class="todo-item-move-icon"></span>
+                        <label class="todo-item-label">
+                            <input class="todo-item-status" type="checkbox">
+                            <span class="todo-item-status-icon"></span>
+                            <span>Delivery stage: test and release </span> 
+                        </label>
+                    </li>
+                </ul>
+
+                <button class="todo-button-add">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M17 12.0006H7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.0024 17V12V7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Add Task
+                </button>
+            </div>
+        </div>
+    </main>
 
     <script src="/dist/js/app.min.js"></script>
 </body>
