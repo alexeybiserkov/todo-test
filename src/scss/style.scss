@@ -41,7 +41,7 @@ body {
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: 150%; 
+    line-height: 150%;
 }
 
 .todo-counter {
@@ -58,6 +58,7 @@ body {
 }
 
 .todo-item {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 16px 0;
@@ -68,49 +69,69 @@ body {
     line-height: 150%;
     gap: 8px;
     border-bottom: 1px solid var(--todo-container-border-color);
+    padding-right: 30px;
 
     &:last-child {
         border-bottom: 0;
     }
-}
 
-.todo-item-move-icon {
-    width: 20px;
-    height: 20px;
-    display: block;
-    background: url(../img/move.svg) no-repeat center center / contain;
-}
-
-.todo-item-status {
-    display: none;
-
-    & + .todo-item-status-icon {
-        display: block;
-        width: 20px;
-        height: 20px;
-        background: url(../img/checkbox.svg) no-repeat center center / contain;
-    }
-
-    &:checked + .todo-item-status-icon {
-        display: block;
-        width: 20px;
-        height: 20px;
-        background: url(../img/checkbox-checked.svg) no-repeat center center / contain;
-    }
-
-    &:checked ~ span {
+    &.is--complete span {
         text-decoration: line-through;
         color: var(--todo-container-text-done-color);
     }
 }
 
+.todo-item-delete-icon {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: none;
+    background: url(../img/close.svg) no-repeat center center / contain;
+    cursor: pointer;
+}
 
+.todo-item-move-icon {
+    min-width: 20px;
+    min-height: 20px;
+    display: block;
+    background: url(../img/move.svg) no-repeat center center / contain;
+}
+
+.todo-item-status-icon {
+    display: block;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.todo-item-status {
+    display: none;
+
+    &+.todo-item-status-icon {
+        background: url(../img/checkbox.svg) no-repeat center center / contain;
+    }
+
+    &:checked+.todo-item-status-icon {
+        background: url(../img/checkbox-checked.svg) no-repeat center center / contain;
+    }
+}
 
 .todo-item-label {
     display: flex;
     align-items: center;
-    gap: 8px;
-   
+    width: 100%;
+
+    input {
+        background: transparent;
+        border: none;
+        color: inherit;
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 }
 
 .todo-button-add {
@@ -134,4 +155,8 @@ body {
     &:hover {
         background: var(--todo-container-button-background-hover);
     }
+}
+
+.dragging {
+    opacity: 0.5;
 }
